@@ -1,0 +1,3 @@
+    "client": "cd client && next dev",
+    "server": "cd backend && npm run start",
+    "dev": "concurrently \"npm run backend\" \"npm run client\""
