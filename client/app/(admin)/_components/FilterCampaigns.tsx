@@ -8,8 +8,8 @@ interface Campaign {
     id: number;
     campaignName: string;
     category: string;
-    target: number;
-    raised: number;
+    targetAmount: number;
+    raisedAmount: number;
     totalBackers: number;
     creatorName: string;
 }
@@ -46,10 +46,10 @@ const FilterCampaigns = ({ campaigns, activeTabCategory }: FilterCampaignsProps)
                                 {campaign?.campaignName}
                             </div>
                             <div className="line-clamp-1">
-                                {campaign?.target}
+                                {campaign?.targetAmount}
                             </div>
                             <div className="line-clamp-1">
-                                {campaign?.raised}
+                                {campaign?.raisedAmount}
                             </div>
                             <div className="">
                                 {campaign?.totalBackers}

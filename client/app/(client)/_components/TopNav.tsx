@@ -32,7 +32,7 @@ const TopNav = () => {
                 className = "fixed inset-0 bg-black opacity-40 z-20"
             />
         ) : null}
-      <div className='flex items-center justify-between py-[1.5rem] text-[13px] font-[500]'>
+      <div className='flex items-center justify-between py-[1rem] text-[13px] font-[500] border-b-[1px] border-zinc-300 pb-[5px] mb-[1rem]'>
         <div className="flex items-center gap-x-[1.5rem]">
           {/* Connect Logo container */}
           <Link href='/' className="">
@@ -51,10 +51,15 @@ const TopNav = () => {
             </li>
             <li className='flex items-center gap-x-[5px]'>
               Campaigns
-              <IoMdArrowDropdown className='text-[1rem]' />
+              <IoMdArrowDropdown className='text-[15px]' />
             </li>
-            <li>
+            <li className="flex items-center gap-x-[5px]">
               Resources
+              <IoMdArrowDropdown className='text-[15px]' />
+            </li>
+            <li className="flex items-center gap-x-[5px]">
+              Programs
+              <IoMdArrowDropdown className='text-[15px]' />
             </li>
           </ul>
         </div>

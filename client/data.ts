@@ -20,13 +20,14 @@ import FinTech from '/public/fintech.png'
 export const campaigns = [
     {
         id: 1,
-        coverImg: ["tech-startup-cover.jpg"],
+        coverImg: ["/elp.png", "/eshop.png", "/cam_1.jpg"],
         slug: "innovative-tech-startup",
         campaignName: "Innovative Tech Startup",
         campaignTagline: "Revolutionizing the future with cutting-edge technology.",
-        campaignBody: "Our startup is focused on developing AI-driven solutions for real-world problems...",
-        target: 500000,
-        raised: 350000,
+        campaignBody: "We believe that quality healthcare is a fundamental right that should be accessible to all, regardless of their circumstances. Join us in making a difference as we ...",
+        targetAmount: 500000,
+        raisedAmount: 350000,
+        minAmount: 10,
         totalBackers: 150,
         equityOffered: 15,  // Percentage
         endDate: "2024-12-31",
@@ -48,21 +49,22 @@ export const campaigns = [
         creatorEmail: "alice@techstartup.com",
         creatorAddress: "123 Tech Avenue, Silicon Valley, CA",
         creatorMobile: "+1234567890",
-        campaignType: "equity",
+        campaignType: "funding",
         isFeatured: true,
-        isUrgent: false,
+        isUrgent: true,
         isTrending: true
     },
     // E-commerce and Retail - Donation Campaign
     {
         id: 2,
-        coverImg: "ecommerce-donation-cover.jpg",
+        coverImg: ["/eshop.png"],
         slug: "support-small-businesses",
         campaignName: "Support Small Businesses",
         campaignTagline: "Empowering local businesses to thrive in a competitive market.",
         campaignBody: "Your donations will help small businesses in our community expand their reach...",
-        target: 100000,
-        raised: 45000,
+        targetAmount: 100000,
+        raisedAmount: 45000,
+        minAmount: 10,
         totalBackers: 200,
         equityOffered: 0,  // Donation campaign doesn't offer equity
         endDate: "2024-09-30",
@@ -90,18 +92,19 @@ export const campaigns = [
     // Health and Wellness - Equity Campaign
     {
         id: 3,
-        coverImg: "health-wellness-cover.jpg",
+        coverImg: ["/cam_1.jpg"],
         slug: "holistic-health-startup",
         campaignName: "Holistic Health Startup",
         campaignTagline: "Promoting wellness through natural and sustainable practices.",
         campaignBody: "We aim to integrate holistic health into everyday life, offering sustainable products...",
-        target: 300000,
-        raised: 150000,
+        targetAmount: 300000,
+        raisedAmount: 150000,
+        minAmount: 10,
         totalBackers: 100,
         equityOffered: 20,  // Percentage
         endDate: "2024-11-15",
         daysLeft: 130,
-        category: "Health and Wellness",
+        category: "HealthCare and Wellness",
         tags: ["Wellness", "Health", "Sustainability"],
         feedback: [
             { user: "Emily White", comment: "Excited for a healthier future.", rating: 5 },
@@ -116,21 +119,22 @@ export const campaigns = [
         creatorEmail: "dana@holisticstartup.com",
         creatorAddress: "789 Wellness Way, Austin, TX",
         creatorMobile: "+1122334455",
-        campaignType: "equity",
+        campaignType: "funding",
         isFeatured: true,
-        isUrgent: false,
+        isUrgent: true,
         isTrending: true
     },
     // Education - Donation Campaign
     {
         id: 4,
-        coverImg: "education-donation-cover.jpg",
+        coverImg: ["/eshop.png"],
         slug: "empower-education",
         campaignName: "Empower Education",
         campaignTagline: "Bringing quality education to underserved communities.",
         campaignBody: "Your donations will help build schools and provide resources for children in need...",
-        target: 200000,
-        raised: 75000,
+        targetAmount: 200000,
+        raisedAmount: 75000,
+        minAmount: 10,
         totalBackers: 250,
         equityOffered: 0,  // Donation campaign doesn't offer equity
         endDate: "2024-08-31",
@@ -156,7 +160,41 @@ export const campaigns = [
         isFeatured: false,
         isUrgent: true,
         isTrending: false
-    }
+    },
+    {
+        id: 5,
+        coverImg: ["/ease.png"],
+        slug: "holistic-health-startup",
+        campaignName: "Holistic Health Startup",
+        campaignTagline: "Promoting wellness through natural and sustainable practices.",
+        campaignBody: "We aim to integrate holistic health into everyday life, offering sustainable products...",
+        targetAmount: 300000,
+        raisedAmount: 150000,
+        minAmount: 10,
+        totalBackers: 100,
+        equityOffered: 20,  // Percentage
+        endDate: "2024-11-15",
+        daysLeft: 130,
+        category: "HealthCare and Wellness",
+        tags: ["Wellness", "Health", "Sustainability"],
+        feedback: [
+            { user: "Emily White", comment: "Excited for a healthier future.", rating: 5 },
+            { user: "Chris Green", comment: "A great cause!", rating: 4 }
+        ],
+        contacts: [
+            { type: "email", value: "info@holisticstartup.com" },
+            { type: "phone", value: "+1122334455" }
+        ],
+        creatorImg: "creator3.jpg",
+        creatorName: "Dana Smith",
+        creatorEmail: "dana@holisticstartup.com",
+        creatorAddress: "789 Wellness Way, Austin, TX",
+        creatorMobile: "+1122334455",
+        campaignType: "funding",
+        isFeatured: true,
+        isUrgent: false,
+        isTrending: true
+    },
 ]
 
 export const categories = [
@@ -167,7 +205,8 @@ export const categories = [
         name: "Technology Startups",
         title: "Invest in Cutting-Edge Technology",
         info: `These ventures offer investment opportunities in cutting-edge technology companies developing software, applications, AI, IoT, blockchain, and other innovative solutions. Potential users can explore investments in tech startups poised for growth and disruption, while entrepreneurs gain access to funding and support for their tech innovations.`,
-        info2: `Focus on showcasing the innovative and disruptive potential of your technology. Highlight the problem your tech solves, the market opportunity, and how your product is better or different from existing solutions.`
+        info2: `Focus on showcasing the innovative and disruptive potential of your technology. Highlight the problem your tech solves, the market opportunity, and how your product is better or different from existing solutions.`,
+        categoryType: "funding"
     },
     {
         id: 2,
@@ -176,16 +215,18 @@ export const categories = [
         name: "E-commerce and Retail",
         title: "Transforming the Online Shopping Experience",
         info: `Investors can support e-commerce startups revolutionizing online shopping experiences, including DTC brands, online marketplaces, subscription services, and more. Entrepreneurs in this space can access capital to scale their businesses and reach new customers, while socially-conscious individuals can invest in sustainable and ethical retail brands.`,
-        info2: `When creating a campaign, emphasize the unique aspects of your e-commerce platform or retail brand. Consider sustainability, customer experience, and scalability as key points of interest for potential investors.`
+        info2: `When creating a campaign, emphasize the unique aspects of your e-commerce platform or retail brand. Consider sustainability, customer experience, and scalability as key points of interest for potential investors.`,
+        categoryType: "funding"
     },
     {
         id: 3,
-        coverImg: ["/hbt_1.jpg", "/hbt_2.jpg", "/hbt_3.jpg"],
-        slug: "healthcare-and-biotech",
-        name: "Healthcare and Biotech",
+        coverImg: ["/ag_1.jpg", "/ag_2.jpg", "/ag_3.jpg", "/ag_4.jpg", "/ag_5.jpg"],
+        slug: "agriculture",
+        name: "Agriculture",
         title: "Innovations in Health and Medicine",
         info: `Healthcare startups focused on digital health, telemedicine, biotechnology, and medical devices offer investment opportunities in groundbreaking healthcare solutions. Investors can contribute to improving healthcare access and outcomes, while entrepreneurs can raise funds to advance life-saving innovations in the healthcare industry.`,
-        info2: `Highlight the impact of your healthcare or biotech innovation on patient outcomes, accessibility, or cost-effectiveness. Provide clear evidence of efficacy and regulatory pathways where applicable.`
+        info2: `Highlight the impact of your healthcare or biotech innovation on patient outcomes, accessibility, or cost-effectiveness. Provide clear evidence of efficacy and regulatory pathways where applicable.`,
+        categoryType: "funding"
     },
     {
         id: 4,
@@ -194,7 +235,8 @@ export const categories = [
         name: "Clean Energy and Sustainability",
         title: "Invest in a Greener Future",
         info: `Investors can support clean energy startups developing renewable energy solutions, energy storage technologies, sustainable agriculture practices, and environmental conservation initiatives. Entrepreneurs working on sustainability projects can access funding to address pressing environmental challenges and promote sustainable development.`,
-        info2: `Focus on the environmental impact, scalability, and long-term sustainability of your project. Clearly articulate the problem your solution addresses and the measurable benefits it provides to the environment.`
+        info2: `Focus on the environmental impact, scalability, and long-term sustainability of your project. Clearly articulate the problem your solution addresses and the measurable benefits it provides to the environment.`,
+        categoryType: "funding"
     },
     {
         id: 5,
@@ -203,7 +245,8 @@ export const categories = [
         name: "Fintech and Financial Services",
         title: "Disrupting the Financial Industry",
         info: `Fintech startups provide investment opportunities in innovative financial products and services, such as peer-to-peer lending, alternative investments, robo-advisory services, and insurtech solutions. Investors can diversify their portfolios with fintech investments, while entrepreneurs gain access to funding and expertise to disrupt the financial services industry.`,
-        info2: `Your campaign should emphasize innovation, security, and customer experience. Demonstrate how your fintech solution improves financial inclusion, reduces costs, or enhances financial services for end users.`
+        info2: `Your campaign should emphasize innovation, security, and customer experience. Demonstrate how your fintech solution improves financial inclusion, reduces costs, or enhances financial services for end users.`,
+        categoryType: "funding"
     },
     {
         id: 6,
@@ -212,7 +255,8 @@ export const categories = [
         name: "EdTech",
         title: "Revolutionizing Education through Technology",
         info: `EdTech startups offer investment opportunities in online learning platforms, educational software, corporate training solutions, and more. Investors can support initiatives to improve education access and quality, while entrepreneurs can raise funds to innovate in the education technology space and address learning challenges.`,
-        info2: `Emphasize how your EdTech solution addresses current gaps in education, improves learning outcomes, or makes education more accessible. Focus on your unique approach, technology, and potential impact.`
+        info2: `Emphasize how your EdTech solution addresses current gaps in education, improves learning outcomes, or makes education more accessible. Focus on your unique approach, technology, and potential impact.`,
+        categoryType: "funding"
     },
     {
         id: 7,
@@ -221,7 +265,8 @@ export const categories = [
         name: "Travel and Hospitality",
         title: "Enhancing Travel Experiences",
         info: `Travel and hospitality startups provide investment opportunities in hospitality technology, online travel agencies, vacation rentals, and sustainable tourism initiatives. Investors can support initiatives to enhance travel experiences and promote responsible tourism practices, while entrepreneurs can access funding to innovate in the travel industry.`,
-        info2: `Highlight how your travel or hospitality innovation improves customer experiences or promotes sustainable tourism. Focus on scalability, market trends, and the potential for repeat business or customer loyalty.`
+        info2: `Highlight how your travel or hospitality innovation improves customer experiences or promotes sustainable tourism. Focus on scalability, market trends, and the potential for repeat business or customer loyalty.`,
+        categoryType: "funding"
     },
     {
         id: 8,
@@ -230,7 +275,8 @@ export const categories = [
         name: "Manufacturing and Supply Chain",
         title: "Innovations in Manufacturing and Logistics",
         info: `Investors can contribute to manufacturing startups developing advanced technologies, 3D printing solutions, supply chain optimization tools, and robotics. Entrepreneurs in this space can raise funds to improve manufacturing processes, reduce costs, and enhance productivity, while socially-conscious individuals can invest in sustainable manufacturing practices.`,
-        info2: `For campaigners, emphasize how your innovation improves efficiency, reduces waste, or meets emerging industry demands. Highlight the scalability of your technology and its potential impact on the broader supply chain.`
+        info2: `For campaigners, emphasize how your innovation improves efficiency, reduces waste, or meets emerging industry demands. Highlight the scalability of your technology and its potential impact on the broader supply chain.`,
+        categoryType: "funding"
     },
     {
         id: 9,
@@ -239,7 +285,8 @@ export const categories = [
         name: "Media and Entertainment",
         title: "Creating Engaging Content and Experiences",
         info: `Media and entertainment startups offer investment opportunities in streaming platforms, gaming companies, podcasting networks, live events, and VR/AR experiences. Investors can support initiatives to create engaging content and experiences, while entrepreneurs can access funding to innovate in the media and entertainment industry.`,
-        info2: `Your campaign should focus on the unique aspects of your content or platform, such as creativity, user engagement, and market potential. Emphasize how your venture will capture and retain audiences or disrupt traditional media models.`
+        info2: `Your campaign should focus on the unique aspects of your content or platform, such as creativity, user engagement, and market potential. Emphasize how your venture will capture and retain audiences or disrupt traditional media models.`,
+        categoryType: "funding"
     },
     {
         id: 10,
@@ -248,7 +295,8 @@ export const categories = [
         name: "Social Services and Welfare",
         title: "Supporting Vulnerable Populations",
         info: `Charitable organizations provide support services to vulnerable populations, such as the homeless, victims of abuse, individuals with mental health challenges, and children in need. Donors can contribute to organizations working to address social issues and provide essential services to those in need, while NGOs can access funding to expand their impact and reach.`,
-        info2: `When creating a campaign, focus on the direct impact of your services on the lives of those you support. Provide clear examples and testimonials to demonstrate how donor contributions will be used effectively.`
+        info2: `When creating a campaign, focus on the direct impact of your services on the lives of those you support. Provide clear examples and testimonials to demonstrate how donor contributions will be used effectively.`,
+        categoryType: "donation"
     },
     {
         id: 11,
@@ -257,16 +305,18 @@ export const categories = [
         name: "Education and Literacy",
         title: "Empowering Through Education",
         info: `Donors can support educational initiatives aimed at improving access to education, promoting literacy, and empowering learners of all ages. NGOs and educational content providers can raise funds to implement programs, offer scholarships, and provide educational resources to underserved communities, while socially-conscious individuals can invest in initiatives that promote lifelong learning and knowledge sharing.`,
-        info2: `Focus your campaign on the transformative power of education. Highlight the specific needs your project addresses and the long-term benefits of improved literacy and education for individuals and communities.`
+        info2: `Focus your campaign on the transformative power of education. Highlight the specific needs your project addresses and the long-term benefits of improved literacy and education for individuals and communities.`,
+        categoryType: "donation"
     },
     {
         id: 12,
-        coverImg: ["/hw_1.jpg", "/hw_2.jpg", "/hw_3.jpg"],
-        slug: "health-and-wellness",
-        name: "Health and Wellness",
+        coverImg: ["/hbt_1.jpg", "/hw_1.jpg", "/hw_2.jpg", "/hw_3.jpg"],
+        slug: "healthcare-and-wellness",
+        name: "HealthCare and Wellness",
         title: "Promoting Health and Well-Being",
         info: `Donors can contribute to initiatives promoting physical and mental well-being, improving healthcare access, and raising awareness about health issues. NGOs and healthcare organizations can access funding to provide medical treatment, healthcare services, and wellness programs to communities in need, while socially-conscious individuals can invest in projects that support health equity and promote preventive care.`,
-        info2: `Emphasize the critical importance of health and wellness in your campaign. Showcase the direct impact of donor contributions on improving health outcomes and access to care in underserved communities.`
+        info2: `Emphasize the critical importance of health and wellness in your campaign. Showcase the direct impact of donor contributions on improving health outcomes and access to care in underserved communities.`,
+        categoryType: "donation"
     },
     {
         id: 13,
@@ -275,7 +325,8 @@ export const categories = [
         name: "Environmental Conservation",
         title: "Protecting Our Planet",
         info: `Donors can support environmental conservation projects aimed at protecting ecosystems, wildlife, and natural resources. NGOs and environmental organizations can raise funds to implement conservation initiatives, promote sustainable practices, and address climate change, while socially-conscious individuals can invest in projects that protect the planet and preserve biodiversity for future generations.`,
-        info2: `Your campaign should focus on the urgency of environmental issues and the tangible impact of conservation efforts. Highlight how donor funds will be used to protect specific ecosystems, species, or natural resources.`
+        info2: `Your campaign should focus on the urgency of environmental issues and the tangible impact of conservation efforts. Highlight how donor funds will be used to protect specific ecosystems, species, or natural resources.`,
+        categoryType: "donation"
     },
     {
         id: 14,
@@ -284,7 +335,8 @@ export const categories = [
         name: "Community Development",
         title: "Building Stronger Communities",
         info: `Donors can contribute to initiatives focused on improving the quality of life in communities, promoting economic empowerment, and fostering social cohesion. NGOs and community development organizations can access funding to support affordable housing, community centers, economic development programs, and cultural preservation efforts, while socially-conscious individuals can invest in projects that strengthen communities and promote social inclusion.`,
-        info2: `When creating a campaign, emphasize the community-focused nature of your project. Highlight the specific needs your project addresses and the long-term benefits to the community, such as economic empowerment or social cohesion.`
+        info2: `When creating a campaign, emphasize the community-focused nature of your project. Highlight the specific needs your project addresses and the long-term benefits to the community, such as economic empowerment or social cohesion.`,
+        categoryType: "donation"
     },
     {
         id: 15,
@@ -293,7 +345,8 @@ export const categories = [
         name: "Human Rights and Social Justice",
         title: "Advocating for Equality and Justice",
         info: `Donors can support organizations advocating for human rights, equality, and social justice for all individuals. NGOs and human rights organizations can raise funds to provide legal aid, support marginalized communities, and advocate for policy change, while socially-conscious individuals can invest in initiatives that promote justice, fairness, and equality for all.`,
-        info2: `Focus on the importance of human rights and social justice in your campaign. Highlight the specific injustices your project seeks to address and the ways in which donor contributions will help promote equality and fairness.`
+        info2: `Focus on the importance of human rights and social justice in your campaign. Highlight the specific injustices your project seeks to address and the ways in which donor contributions will help promote equality and fairness.`,
+        categoryType: "donation"
     },
     {
         id: 16,
@@ -302,19 +355,35 @@ export const categories = [
         name: "Disaster Relief and Emergency Response",
         title: "Helping Communities in Crisis",
         info: `Donors can contribute to disaster relief efforts providing humanitarian aid and support to communities affected by natural disasters and emergencies. NGOs and disaster response organizations can access funding to provide food, shelter, medical care, and other essential services to disaster-affected populations, while socially-conscious individuals can invest in projects that help communities recover and rebuild after a crisis.`,
-        info2: `Your campaign should focus on the immediate and life-saving impact of disaster relief efforts. Emphasize how donor funds will be used to provide critical services and support to those affected by natural disasters and emergencies.`
+        info2: `Your campaign should focus on the immediate and life-saving impact of disaster relief efforts. Emphasize how donor funds will be used to provide critical services and support to those affected by natural disasters and emergencies.`,
+        categoryType: "donation"
     },
-    {
-        id: 17,
-        coverImg: ["/ac_1.jpg", "/ac_2.jpg", "/ac_3.jpg"],
-        slug: "arts-and-culture",
-        name: "Arts and Culture",
-        title: "Celebrating Creativity and Heritage",
-        info: `Donors can support initiatives promoting arts education, preserving cultural heritage, and expanding access to the arts. NGOs and cultural organizations can raise funds to support arts education programs, cultural festivals, public art installations, and heritage conservation projects, while socially-conscious individuals can invest in initiatives that celebrate diversity, creativity, and cultural expression.`,
-        info2: `Highlight the importance of arts and culture in fostering creativity and preserving heritage. Your campaign should focus on the impact of your project on communities, whether through arts education, cultural preservation, or public engagement.`
-    }
 ]
 
+
+
+export const stats = [
+  {
+    id: 1,
+    numbers: 0,
+    name: "Total Campaigns"
+  },
+  {
+    id: 2,
+    numbers: 0,
+    name: "Funded Campaigns"
+  },
+  {
+    id: 3,
+    numbers: 0,
+    name: "Portfolio Market Cap"
+  },
+  {
+    id: 4,
+    numbers: 0,
+    name: "Community Members"
+  },
+]
 
 export const campaignTypes = [
     {
@@ -328,6 +397,71 @@ export const campaignTypes = [
         slug: "donation",
         title: "Donation",
         info: "Raise funds for a cause, project, or initiative without offering financial returns"
+    }
+]
+
+export const predefinedAmount = [
+    {
+        id: 1,
+        amount: 50
+    },
+    {
+        id: 2,
+        amount: 100
+    },
+    {
+        id: 3,
+        amount: 200
+    },
+    {
+        id: 4,
+        amount: 300
+    },
+    {
+        id: 5,
+        amount: 500
+    },
+    {
+        id: 6,
+        amount: 1000
+    },
+]
+
+
+export const payMethods = [
+    {
+        id: 1,
+        type: 'Orange Money',
+        cards: ['/orange.png']
+    },
+    {
+        id: 2,
+        type: 'AfriMoney',
+        cards: ['/africell.png']
+    },
+    {
+        id: 3,
+        type: 'Credit | Debit Card',
+        cards: ['/visa.png', '/mastercard.png']
+    }
+]
+
+export const countries = [
+    {
+        id: 1,
+        text: 'Sierra Leone',
+    },
+    {
+        id: 2,
+        text: 'England',
+    },
+    {
+        id: 3,
+        text: 'Ghana',
+    },
+    {
+        id: 4,
+        text: 'Australia',
     }
 ]
 
@@ -443,7 +577,7 @@ export const testimonials = [
         authorName: "John A.",
         thumbnail: "/founder.jpg",
         authorVideo: "https://www.youtube.com/watch?v=CB8c7y1YJGc",
-        messageText: "Connect enabled us to reach a broader audience for our education initiative. The funding we received has allowed us to expand our programs and make a bigger impact in our community.",
+        messageText: `"Connect enabled us to reach a broader audience for our education initiative. The funding we received has allowed us to expand our programs and make a bigger impact in our community."`,
         authorRole: "Educational Content Provider",
         authorCompany: "Space"
     },
@@ -465,4 +599,39 @@ export const testimonials = [
         authorRole: "Founder",
         authorCompany: "Space"
     }
+]
+
+export const news_insights = [
+    {
+        id: 1,
+        title: "How to Create a Successful Marketing Strategy",
+        coverImage: Marketing,
+        date: "2023-07-01",
+        author: "Jane Doe",
+        tagline: "Marketing is a crucial part of any business. Learn how to create a successful marketing strategy and stay ahead of the curve.",
+    },
+    {
+        id: 2,
+        title: "How to Create a Successful Marketing Strategy",
+        coverImage: GreenEnergy,
+        date: "2023-07-01",
+        author: "Michael L. Bangura",
+        tagline: "Marketing is a crucial part of any business. Learn how to create a successful marketing strategy and stay ahead of the curve.",
+    },
+    {
+        id: 3,
+        title: "How to Create a Successful Marketing Strategy",
+        coverImage: PitchDeck,
+        date: "2023-07-01",
+        author: "Jane Doe",
+        tagline: "Marketing is a crucial part of any business. Learn how to create a successful marketing strategy and stay ahead of the curve.",
+    },
+    {
+        id: 4,
+        title: "How to Create a Successful Marketing Strategy",
+        coverImage: Planner,
+        date: "2023-07-01",
+        author: "Florah A. Bangura",
+        tagline: "Marketing is a crucial part of any business. Learn how to create a successful marketing strategy and stay ahead of the curve.",
+    },
 ]

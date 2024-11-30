@@ -82,15 +82,20 @@ const Categories = () => {
             </section>
             <section className="categories_container min-w-[100%] flex items-center justify-between gap-2 overflow-auto scroll-smooth cursor-pointer pb-1 md:gap-3" ref={categories_container}>
                 {categories?.map((category) => (
-                    <div className="min-w-[20rem] h-[20rem] relative rounded-[6px]" key={category?.id}>
+                    <div className="min-w-[18rem] h-[20rem] relative rounded-[6px]" key={category?.id}>
                         <div className="h-full absolute inset-0 rounded-[5px] z-10">
                             <div className="absolute bottom-0 left-0 right-0 h-full bg-gradient-to-t from-zinc-700 via-zinc-700 to-transparent opacity-20 rounded-b-[6px]" />
-                            <div className="absolute bottom-0 left-0 right-0 h-[8rem] bg-gradient-to-t from-zinc-900 via-zinc-900 to-transparent opacity-90 rounded-b-[6px]" />
+                            <div className="absolute bottom-0 left-0 right-0 h-[10rem] bg-gradient-to-t from-zinc-900 via-zinc-900 to-transparent opacity-90 rounded-b-[6px]" />
                         </div>
                         <ImageCarousel images={category?.coverImg} />
-                        <p className='w-[100%] text-[1rem] font-medium absolute bottom-[0.5rem] left-0 right-0 px-[1.5rem] py-2 text-white line-clamp-1 z-20'>
-                            {category?.name}
-                        </p>
+                        <div className="w-full h-[3.5rem] absolute bottom-[0.5rem] left-0 right-0 overflow-hidden z-20">
+                            <p className='w-[100%] text-[15.5px] font-medium px-[1.5rem] text-white line-clamp-1 overflow-hidden'>
+                                {category?.name}
+                            </p>
+                            <p className='w-[100%] text-[13px] font-medium px-[1.5rem] mt-[5px] text-white'>
+                                0 Campaign
+                            </p>
+                        </div>
                     </div>
                 ))}
             </section>

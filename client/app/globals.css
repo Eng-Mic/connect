@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  background: #FCFCFC
+}
 
 @layer base {
   :root {

@@ -50,7 +50,7 @@ const Testimonials = () => {
                 <h2 className='text-[1.3rem] font-[500] max-w-[25rem]'>
                     Real Stories of Success: Hear from Our Community.
                 </h2>
-                <p className='max-w-[45rem] mt-[5px] text-[15.5px]'>
+                <p className='max-w-[45rem] mt-[5px] text-[14px] font-medium'>
                     Discover how Connect has transformed lives and fueled innovative projects through the voices of our entrepreneurs, donors, investors, and etc.
                 </p>
             </section>
@@ -94,7 +94,7 @@ const Testimonials = () => {
                                 </div>
                             </div>
                             <div className="py-[1.5rem] px-[5rem]">
-                                <p className='text-[15px] min-h-[4rem] mb-[10px] leading-[1.6rem]'>
+                                <p className='text-[1.1rem] min-h-[4rem] mb-[10px] leading-[1.6rem]'>
                                     {testimonial?.messageText}
                                 </p>
                                 <p className='text-[14.5px] font-medium'>

@@ -5,7 +5,7 @@ interface Campaign {
     id: number;
     campaignName: string;
     category: string;
-    raised: number;
+    raisedAmount: number;
     // Add other fields as necessary
 }
 
@@ -27,7 +27,7 @@ const Stats = ({ campaigns, categories, activeTabCategory }: StatsProps) => {
     const categoryTotals = categories.map(category => {
         const totalRaised = campaigns
             .filter(campaign => campaign.category.toLowerCase().split(' ').join('-') === category.slug)
-            .reduce((sum, campaign) => sum + campaign.raised, 0);
+            .reduce((sum, campaign) => sum + campaign.raisedAmount, 0);
         return { ...category, totalRaised };
     });
 
@@ -48,7 +48,7 @@ const Stats = ({ campaigns, categories, activeTabCategory }: StatsProps) => {
     // If activeTabCategory is "all", sum up all campaigns and amounts
     if (activeTabCategory === "all") {
         const totalCampaigns = campaigns.length;
-        const totalRaised = campaigns.reduce((sum, campaign) => sum + campaign.raised, 0);
+        const totalRaised = campaigns.reduce((sum, campaign) => sum + campaign.raisedAmount, 0);
         
         return (
             <div className="">
@@ -93,7 +93,7 @@ const Stats = ({ campaigns, categories, activeTabCategory }: StatsProps) => {
                             Total Campaigns
                         </p>
                         <h2 className='text-[1.4rem] font-semibold leading-3 flex items-center gap-2 py-1 md:py-0'>
-                            {campaigns.filter(campaign => campaign.category === activeTabCategory).length}
+                            {campaigns.filter(campaign => campaign.category.toLowerCase().split(' ').join('-') === activeTabCategory.toLowerCase().split(' ').join('-')).length}
                         </h2>
                     </div>
                     <p className='text-[10px] font-medium text-zinc-400 mt-[3px] flex items-center gap-2'>

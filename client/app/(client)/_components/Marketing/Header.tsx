@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import TopNav from '../TopNav'
 import Line from '/public/line.png'
 import Hotspot from '/public/hotspot-tower-icon.svg'
-import Community from '/public/space_2.png'
+import Community from '/public/community.png'
 import Image from 'next/image'
 import { IoIosMegaphone } from 'react-icons/io'
 import ProgressBar from '../ProgressBar'
@@ -13,15 +13,15 @@ import ProgressBar from '../ProgressBar'
 const Header = () => {
     
   return (
-    <div className="w-full mx-auto min-h-screen bg-desktop bg-no-repeat bg-cover bg-center overflow-hidden">
-        <div className="w-[90%]  mx-auto lg:w-[85%] lg:max-w-screen-xl">
+    <div className="w-full mx-auto min-h-screen bg-desktop bg-no-repeat bg-cover bg-center overflow-hidden relative">
+        <div className="w-[90%] mx-auto lg:w-[82%] lg:max-w-screen-xl">
             <TopNav />
         </div>
         <div className="w-[90%]  mx-auto flex flex-col justify-center items-center lg:w-[85%]">
             <div className="relative mb-[10px]">
                 {/* Hero primary text */}
-                <h1 className="text-[2.4rem] font-semibold sm:text-[2.2rem]">
-                    Imagine a space
+                <h1 className="text-[2.5rem] font-semibold tracking-tight sm:text-[2.5rem]">
+                    Imagine a community
                 </h1>
                 <Image
                     src={Line}
@@ -75,12 +75,12 @@ const Header = () => {
                 </button>
             </div>
         </div>
-        <div className="w-full max-h-[20rem] mt-[3rem]">
+        <div className="w-full mx-auto max-h-[21rem]">
             <Image
                 src={Community}
                 alt='connect community'
                 // width={1200} height={800}
-                // sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 800px"
                 loading="lazy"
                 className='w-full h-full object-contain'
             />
